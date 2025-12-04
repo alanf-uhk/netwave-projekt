@@ -1,0 +1,306 @@
+/* ===========================================
+   style.css — Hlavní styly pro NetWave
+   =========================================== */
+
+/* --- DESIGN TOKENS --- */
+:root {
+  --color-primary-900: #022f5b;
+  --color-primary-700: #0b4f88;
+  --color-primary-500: #1976d2;
+  --color-primary-300: #63a4ff;
+  --color-neutral-900: #0f1724;
+  --color-neutral-700: #334155;
+  --color-neutral-400: #8b98a8;
+  --color-neutral-100: #f6f9fc;
+  --color-success: #0f9d58;
+  --color-danger: #d93025;
+  --accent: var(--color-primary-500);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-hero: clamp(1.5rem, 2.6vw + 0.6rem, 2.4rem);
+  --fs-h1: clamp(1.25rem, 2.0vw + 0.4rem, 1.8rem);
+  --fs-base: 1rem;
+  --fs-small: 0.9rem;
+  --fw-semibold: 600;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+
+  --container-max: 1100px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(6, 30, 60, 0.08);
+  --focus-ring: 3px;
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, p, ul, li, figure, blockquote, dl, dd { margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--color-neutral-900);
+  background: linear-gradient(180deg, var(--color-neutral-100) 0%, #ffffff 100%);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+/* Sticky footer setup */
+main { flex: 1; }
+
+.container {
+  width: calc(100% - 2*var(--space-4));
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+h1, h2, h3 { color: var(--color-primary-900); line-height: 1.2; font-weight: var(--fw-semibold); }
+p { color: var(--color-neutral-700); margin-bottom: var(--space-4); }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Focus accessibility */
+:focus-visible {
+  outline: var(--focus-ring) solid rgba(25,118,210,0.18);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+#kontakt,
+#tarify,
+#pokryti {
+  scroll-margin-top: 100px; /* Výška hlavičky (cca 70px) + 30px mezera */
+}
+
+.disclaimer-box {
+  background-color: var(--color-danger); /* Červená nebo žlutá */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+/* --- UTILITIES --- */
+.u-pt-4 { padding-top: var(--space-4); }
+.u-mt-4 { margin-top: var(--space-4); }
+.u-mb-4 { margin-bottom: var(--space-4); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* --- COMPONENTS: Header --- */
+.site-header {
+  background: rgba(255,255,255,0.9);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(6,30,60,0.05);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); }
+
+.brand { display: flex; gap: var(--space-3); align-items: center; }
+.brand__logo {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-500));
+  color: #fff; display: grid; place-items: center; font-weight: 700;
+}
+.brand__title { font-weight: var(--fw-semibold); color: var(--color-primary-900); }
+
+/* --- COMPONENTS: Nav --- */
+nav.primary-nav ul { display: flex; gap: var(--space-4); }
+nav.primary-nav a { font-weight: 500; color: var(--color-neutral-700); transition: color 0.2s; }
+nav.primary-nav a:hover, nav.primary-nav a.active { color: var(--color-primary-500); }
+
+/* Mobile Menu */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--color-primary-700); margin: 5px 0; transition: 0.3s; }
+.mobile-nav {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  background: white; border-bottom: 1px solid #eee; padding: var(--space-4);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.mobile-nav a { display: block; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+
+/* --- COMPONENTS: Buttons --- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer;
+  border: 1px solid transparent; transition: all 0.2s;
+}
+.btn--primary { background: var(--color-primary-500); color: white; }
+.btn--primary:hover { background: var(--color-primary-700); }
+.btn--ghost { background: transparent; border-color: var(--color-primary-300); color: var(--color-primary-700); }
+.btn--ghost:hover { background: rgba(25,118,210,0.05); }
+
+/* --- SECTIONS: Hero --- */
+.hero { padding: var(--space-8) 0; }
+.hero__inner { display: grid; grid-template-columns: 1fr 350px; gap: var(--space-8); align-items: center; }
+
+/* --- SECTIONS: Contact Box --- */
+.contact-box {
+  background: #fff; border: 1px solid rgba(25,118,210,0.1);
+  padding: var(--space-5); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+/* Form Styles */
+input, textarea {
+  width: 100%; padding: 10px; border-radius: 8px;
+  border: 1px solid #ccc; margin-bottom: 10px;
+  font-family: inherit;
+}
+textarea { resize: vertical; min-height: 80px; max-height: 200px; }
+
+/* --- SECTIONS: Tariffs --- */
+.tariffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-5); }
+.tariff-card {
+  background: white; padding: var(--space-5); border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; transition: transform 0.2s;
+}
+.tariff-card:hover { transform: translateY(-4px); }
+.tariff-card--featured { border: 2px solid var(--color-primary-300); position: relative; }
+.tariff-card__price { font-size: 1.5rem; font-weight: 700; color: var(--color-primary-700); margin: 10px 0; }
+
+/* --- SECTIONS: Coverage Map --- */
+.map-frame {
+  width: 100%; 
+  height: 400px; 
+  background: #eef2f6; 
+  border-radius: var(--radius-md);
+  /* Odstranili jsme flexbox centrování, protože obrázek teď vyplní plochu */
+  overflow: hidden; 
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Styl pro odkaz uvnitř mapy */
+.map-frame a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in; /* Změní kurzor na lupu */
+  overflow: hidden;
+}
+
+.map-frame img { 
+  width: 100%; 
+  height: 100%; 
+  border: 0; 
+  
+  /* KLÍČOVÁ VLASTNOST PRO "SEDĚNÍ V NÁHLEDU": */
+  /* cover = vyplní celý box, ale ořízne okraje (dobré pro fotky) */
+  /* contain = zobrazí celou mapu, ale mohou vzniknout prázdné pruhy po stranách (dobré pro mapy) */
+  object-fit: cover; 
+  object-position: center;
+  
+  transition: transform 0.4s ease; /* Plynulá animace */
+}
+
+/* Efekt při najetí myší - jemné přiblížení */
+.map-frame a:hover img {
+  transform: scale(1.03);
+}
+
+/* --- PAGE: Služby (Services Grid) --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); }
+.service-item {
+  background: white; padding: var(--space-5); border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 10px;
+}
+.service-icon { font-size: 2rem; margin-bottom: 5px; }
+
+/* --- FOOTER --- */
+.site-footer { background: #f8f9fa; padding-top: var(--space-6); margin-top: var(--space-10); border-top: 1px solid #eee; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+
+/* --- PAGE: Tariff Detail --- */
+/* Styly pro samotnou stránku detailu, aby vypadala hezky */
+
+.tariff-detail {
+  max-width: 800px; /* Aby text nebyl roztažený přes celou šířku na velkém monitoru */
+  margin: 0 auto;
+}
+
+.tariff-detail .card {
+  background: white;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tariff-detail h1 {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-h1);
+}
+
+.tariff-detail__price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-4);
+}
+
+.tariff-detail__price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-neutral-700);
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  color: var(--color-primary-500);
+}
+.back-btn:hover { text-decoration: underline; }
+
+/* Komponenta: Info Box (náhrada za inline styly) */
+.info-box {
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-5);
+  font-size: 0.95rem;
+}
+
+.info-box--blue {
+  background: #f0f7ff;
+  color: #0b4f88;
+  border: 1px solid rgba(11, 79, 136, 0.1);
+}
+
+.info-box--yellow {
+  background: #fff8e1;
+  color: #b7791f;
+  border: 1px solid #fbd38d;
+}
+
+.tariff-detail ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: var(--space-5);
+  color: var(--color-neutral-700);
+}
+.tariff-detail li { margin-bottom: 5px; }
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .tariffs { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  nav.primary-nav { display: none; }
+  .hamburger { display: block; }
+  .mobile-nav[aria-hidden="false"] { display: block; }
+  .tariffs { grid-template-columns: 1fr; }
+}

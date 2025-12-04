@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detail tarifu Standard — NetWave</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand__logo">NW</div>
+        <div class="brand__title">NetWave</div>
+      </div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="index.html#tarify">Tarify</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+       <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobile-menu').style.display = (document.getElementById('mobile-menu').style.display === 'block') ? 'none' : 'block'">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-nav">
+      <a href="index.html">Domů</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="index.html#tarify">Tarify</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+  </header>
+
+  <main class="container u-pt-4 tariff-detail">
+    
+    <a href="index.html#tarify" class="back-btn">← Zpět na přehled tarifů</a>
+
+    <article class="card">
+      <h1>Tarif Standard</h1>
+      <div class="tariff-detail__price">
+        349 Kč <span>/ měsíc</span>
+      </div>
+      
+      <p>Ideální volba pro rodiny s dětmi nebo pro práci z domova (Home Office). Zvládne sledování videa ve vysoké kvalitě na více zařízeních současně bez zasekávání.</p>
+
+      <hr style="border:0; border-top:1px solid #eee; margin: 20px 0;">
+
+      <h3>Co získáte:</h3>
+      <ul>
+        <li>Rychlost stahování <strong>200 Mbps</strong></li>
+        <li>Rychlost nahrávání <strong>50 Mbps</strong></li>
+        <li>Neomezený přenos dat</li>
+        <li>Výkonný Dual-Band Wi-Fi router k zapůjčení</li>
+        <li>Prioritní technická podpora</li>
+      </ul>
+
+      <div class="info-box info-box--blue">
+        <strong>Náš tip:</strong> Tento tarif je nejprodávanější a plně dostačuje pro 4člennou domácnost.
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>NetWave s.r.o.</strong><br>
+        <span style="font-size:0.9rem; color:#666">Adresa: nám. Příkladů 1, 500 00 Město</span><br>
+        <a href="mailto:info@netwave.example" style="font-size:0.9rem; color:#666; text-decoration: underline;">
+          info@netwave.example
+        </a>
+      </div>
+      <div>
+        <span style="font-size:0.9rem; color:#666">© NetWave — studentský projekt</span><br>
+        <span style="font-size:0.9rem; color:#666">Poslední aktualizace: 4. 12. 2025</span>
+      </div>
+    </div>
+    <div class="disclaimer-box">
+      ⚠️ TOTO JE STUDENTSKÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
+    </div>
+  </footer>
+
+</body>
+</html>

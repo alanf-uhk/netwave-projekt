@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NetWave — lokální poskytovatel internetu</title>
+  <meta name="description" content="NetWave — fiktivní lokální poskytovatel internetu.">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand__logo">NW</div>
+        <div>
+          <div class="brand__title">NetWave</div>
+          <div style="font-size:0.85rem;color:var(--color-neutral-400)">lokální internet</div>
+        </div>
+      </div>
+
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="#tarify">Tarify</a></li>
+          <li><a href="#pokryti">Pokrytí</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobile-menu').setAttribute('aria-hidden', document.getElementById('mobile-menu').getAttribute('aria-hidden')==='true'?'false':'true')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-nav" aria-hidden="true">
+      <a href="sluzby.html">Služby</a>
+      <a href="#tarify">Tarify</a>
+      <a href="#pokryti">Pokrytí</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <p style="color:var(--color-primary-700); font-weight:600;">Rychlý a spolehlivý internet</p>
+          <h1 style="font-size:var(--fs-hero); margin-bottom:var(--space-3)">NetWave — internet pro všechny</h1>
+          <p>Stabilní připojení, férové ceny a lokální podpora. Vyberte si svůj ideální tarif ještě dnes.</p>
+          <div style="display:flex; gap:12px;">
+            <a class="btn btn--primary" href="#tarify">Vybrat tarif</a>
+            <a class="btn btn--ghost" href="#kontakt">Napsat nám</a>
+          </div>
+        </div>
+
+        <aside class="contact-box" id="kontakt">
+          <h3 style="margin-bottom:12px">Rychlý kontakt</h3>
+          <form id="contactForm">
+             <input name="name" type="text" placeholder="Jméno" required>
+             <input name="email" type="email" placeholder="Email" required>
+             <textarea name="message" rows="8" placeholder="Zpráva..." required></textarea>
+             <button type="submit" class="btn btn--primary" style="width:100%">Odeslat</button>
+             <div id="formStatus" style="margin-top:8px; font-size:0.9rem;"></div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container u-pt-4" id="tarify">
+      <h2>Naše tarify</h2>
+      <p>Klikněte na "Více informací" pro detailní specifikaci tarifu.</p>
+
+      <div class="tariffs">
+        <article class="tariff-card">
+          <div class="tariff-card__title">Start</div>
+          <div class="tariff-card__price">199 Kč / měsíc</div>
+          <p>Rychlost do 50 Mbps.</p>
+          <div style="margin-top:auto; display:flex; gap:8px;">
+            <a href="tarif-start.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+            <button class="btn btn--primary">Objednat</button>
+          </div>
+        </article>
+
+        <article class="tariff-card tariff-card--featured">
+          <div class="tariff-card__title">Standard</div>
+          <div class="tariff-card__price">349 Kč / měsíc</div>
+          <p>Rychlost do 200 Mbps.</p>
+          <div style="margin-top:auto; display:flex; gap:8px;">
+            <a href="tarif-standard.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+            <button class="btn btn--primary">Objednat</button>
+          </div>
+        </article>
+
+        <article class="tariff-card">
+          <div class="tariff-card__title">Profi</div>
+          <div class="tariff-card__price">649 Kč / měsíc</div>
+          <p>Rychlost do 1000 Mbps.</p>
+          <div style="margin-top:auto; display:flex; gap:8px;">
+            <a href="tarif-profi.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+            <button class="btn btn--primary">Objednat</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container u-pt-4 u-mt-4" id="pokryti">
+      <h2>Mapa pokrytí</h2>
+      <p>Podívejte se, kde všude naše služby poskytujeme.</p>
+        <div class="map-frame">
+            <a href="img/mapa.jpg" target="_blank" title="Klikněte pro zvětšení mapy">
+              <img src="img/mapa.jpg" alt="Mapa pokrytí NetWave">
+            </a>
+        </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>NetWave s.r.o.</strong><br>
+        <span style="font-size:0.9rem; color:#666">Adresa: nám. Prikladu 1, 500 00 Město</span><br>
+        <a href="mailto:info@netwave.example" style="font-size:0.9rem; color:#666; text-decoration: underline;">
+        info@netwave.example
+      </a>
+      </div>
+      <div>
+      <span style="font-size:0.9rem; color:#666">© NetWave — studentský projekt</span><br>
+       <span style="font-size:0.9rem; color:#666">Posledni aktualizace: 4. 12. 2025</span>
+       </div>
+    </div>
+    <div class="disclaimer-box">
+  ⚠️ TOTO JE STUDENTSKÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
+</div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formStatus').textContent = 'Děkujeme, zpráva odeslána!';
+      document.getElementById('formStatus').style.color = 'var(--color-success)';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
