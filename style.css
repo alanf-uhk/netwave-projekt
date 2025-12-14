@@ -79,11 +79,11 @@ img { max-width: 100%; height: auto; display: block; }
 #kontakt,
 #tarify,
 #pokryti {
-  scroll-margin-top: 100px; /* Výška hlavičky (cca 70px) + 30px mezera */
+  scroll-margin-top: 100px; 
 }
 
 .disclaimer-box {
-  background-color: var(--color-danger); /* Červená nebo žlutá */
+  background-color: var(--color-danger); 
   color: white;
   text-align: center;
   padding: 10px;
@@ -177,18 +177,16 @@ textarea { resize: vertical; min-height: 80px; max-height: 200px; }
   height: 400px; 
   background: #eef2f6; 
   border-radius: var(--radius-md);
-  /* Odstranili jsme flexbox centrování, protože obrázek teď vyplní plochu */
   overflow: hidden; 
   position: relative;
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Styl pro odkaz uvnitř mapy */
 .map-frame a {
   display: block;
   width: 100%;
   height: 100%;
-  cursor: zoom-in; /* Změní kurzor na lupu */
+  cursor: zoom-in; 
   overflow: hidden;
 }
 
@@ -196,17 +194,13 @@ textarea { resize: vertical; min-height: 80px; max-height: 200px; }
   width: 100%; 
   height: 100%; 
   border: 0; 
-  
-  /* KLÍČOVÁ VLASTNOST PRO "SEDĚNÍ V NÁHLEDU": */
-  /* cover = vyplní celý box, ale ořízne okraje (dobré pro fotky) */
-  /* contain = zobrazí celou mapu, ale mohou vzniknout prázdné pruhy po stranách (dobré pro mapy) */
   object-fit: cover; 
   object-position: center;
   
-  transition: transform 0.4s ease; /* Plynulá animace */
+  transition: transform 0.4s ease; 
 }
 
-/* Efekt při najetí myší - jemné přiblížení */
+
 .map-frame a:hover img {
   transform: scale(1.03);
 }
@@ -224,10 +218,8 @@ textarea { resize: vertical; min-height: 80px; max-height: 200px; }
 .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 
 /* --- PAGE: Tariff Detail --- */
-/* Styly pro samotnou stránku detailu, aby vypadala hezky */
-
 .tariff-detail {
-  max-width: 800px; /* Aby text nebyl roztažený přes celou šířku na velkém monitoru */
+  max-width: 800px; 
   margin: 0 auto;
 }
 
@@ -265,7 +257,6 @@ textarea { resize: vertical; min-height: 80px; max-height: 200px; }
 }
 .back-btn:hover { text-decoration: underline; }
 
-/* Komponenta: Info Box (náhrada za inline styly) */
 .info-box {
   padding: 15px;
   border-radius: var(--radius-sm);
