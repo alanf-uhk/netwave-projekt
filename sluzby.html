@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Naše služby — NetWave</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/0396aa21ce.js" crossorigin="anonymous"></script>
@@ -10,109 +10,108 @@
 <body>
 
   <header class="site-header">
-    <div class="container">
+    <div class="container site-header__inner">
       <div class="brand">
         <div class="brand__logo">NW</div>
-        <div class="brand__title">NetWave</div>
+        <div class="brand__text"><span class="brand__title">NetWave</span></div>
       </div>
-
-      <nav class="primary-nav">
-        <ul>
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="sluzby.html" class="active">Služby</a></li>
-          <li><a href="index.html#tarify">Tarify</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
-        </ul>
+      <nav class="nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav__checkbox sr-only">
+        <label for="nav-toggle-checkbox" class="nav__toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li><a href="index.html" class="nav__link">Domů</a></li>
+            <li><a href="sluzby.html" class="nav__link is-active">Služby</a></li>
+            <li><a href="index.html#tarify" class="nav__link">Tarify</a></li>
+            <li><a href="index.html#kontakt" class="nav__link">Kontakt</a></li>
+          </ul>
+        </div>
       </nav>
-
-      <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobile-menu').setAttribute('aria-hidden', document.getElementById('mobile-menu').getAttribute('aria-hidden')==='true'?'false':'true')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div id="mobile-menu" class="mobile-nav" aria-hidden="true">
-      <a href="index.html">Domů</a>
-      <a href="sluzby.html">Služby</a>
-      <a href="index.html#tarify">Tarify</a>
-      <a href="index.html#kontakt">Kontakt</a>
     </div>
   </header>
 
-  <main>
-    <section class="container u-pt-4">
-      <h1 style="margin-bottom: 10px;">Co vše pro vás děláme</h1>
-      <p style="max-width: 700px;">Kromě stabilního internetového připojení nabízíme komplexní řešení pro domácnosti i firmy. Podívejte se na přehled našich služeb.</p>
+  <main class="container u-pt-8">
+    <div class="u-text-center u-mb-4">
+      <h1>Co vše pro vás děláme</h1>
+      <p class="intro-text">Kromě stabilního internetového připojení nabízíme komplexní řešení pro domácnosti i firmy.</p>
+    </div>
 
-      <div class="services-grid u-mt-4">
-        
-        <article class="service-item">
-          <div class="service-icon"><i class="fa-solid fa-tower-cell" style="color: var(--color-primary-500)"></i></div>
-          <h3>Bezdrátový internet</h3>
-          <p>Ideální řešení pro rodinné domy a menší obce. Využíváme moderní 5G/60GHz technologie pro stabilní signál bez nutnosti kopání kabelů.</p>
-          <ul style="margin-top:auto; padding-left:20px; list-style:disc; color:var(--color-neutral-700)">
+    <div class="card-grid">
+      <article class="card">
+        <div class="card__icon"><i class="fa-solid fa-tower-cell"></i></div>
+        <h3>Bezdrátový internet</h3>
+        <p>Ideální řešení pro rodinné domy. Moderní 5G/60GHz technologie.</p>
+        <div class="u-mt-auto">
+          <ul class="detail-list">
             <li>Rychlá instalace</li>
             <li>Nízká odezva (ping)</li>
           </ul>
-        </article>
+        </div>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon"><i class="fa-solid fa-ethernet" style="color: var(--color-primary-500)"></i></div>
-          <h3>Optické připojení</h3>
-          <p>Tam, kde máme nataženou optiku, nabízíme to nejlepší na trhu. Stabilní rychlosti až 1 Gbps, symetrický download/upload.</p>
-          <ul style="margin-top:auto; padding-left:20px; list-style:disc; color:var(--color-neutral-700)">
+      <article class="card">
+        <div class="card__icon"><i class="fa-solid fa-ethernet"></i></div>
+        <h3>Optické připojení</h3>
+        <p>Nejlepší na trhu. Stabilní rychlosti až 1 Gbps, symetrický download/upload.</p>
+        <div class="u-mt-auto">
+          <ul class="detail-list">
             <li>Nejvyšší stabilita</li>
             <li>Odolnost vůči počasí</li>
           </ul>
-        </article>
+        </div>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon"><i class="fa-solid fa-tv" style="color: var(--color-primary-500)"></i></div>
-          <h3>Internetová TV (IPTV)</h3>
-          <p>Sledujte své oblíbené pořady, filmy a seriály ve vysoké kvalitě. Funkce zpětného přehrávání až 7 dní a nahrávání pořadů.</p>
-          <ul style="margin-top:auto; padding-left:20px; list-style:disc; color:var(--color-neutral-700)">
+      <article class="card">
+        <div class="card__icon"><i class="fa-solid fa-tv"></i></div>
+        <h3>Internetová TV (IPTV)</h3>
+        <p>Sledujte pořady, filmy a seriály. Zpětné přehrávání až 7 dní.</p>
+        <div class="u-mt-auto">
+          <ul class="detail-list">
             <li>Přes 100 TV kanálů</li>
             <li>Aplikace pro Smart TV</li>
           </ul>
-        </article>
+        </div>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--color-primary-500)"></i></div>
-          <h3>Servis a instalace sítí</h3>
-          <p>Potřebujete zasíťovat dům nebo kancelář? Navrhneme a zrealizujeme strukturovanou kabeláž i nastavení Wi-Fi routerů.</p>
-          <ul style="margin-top:auto; padding-left:20px; list-style:disc; color:var(--color-neutral-700)">
+      <article class="card">
+        <div class="card__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Servis sítí</h3>
+        <p>Návrh a realizace strukturované kabeláže a Wi-Fi routerů.</p>
+        <div class="u-mt-auto">
+          <ul class="detail-list">
             <li>Návrh řešení na míru</li>
             <li>Správa firemních sítí</li>
           </ul>
-        </article>
+        </div>
+      </article>
+    </div>
 
-      </div>
-
-      <div style="margin-top: 40px; padding: 30px; background: #eef6fc; border-radius: 12px; text-align: center;">
-        <h3>Máte speciální požadavek?</h3>
-        <p style="margin-bottom: 20px;">Pro firmy nabízíme individuální SLA smlouvy a garantované linky.</p>
-        <a href="index.html#kontakt" class="btn btn--primary">Napište nám</a>
-      </div>
-
-    </section>
+    <div class="info-box info-box--info u-text-center u-mt-12">
+      <h3>Máte speciální požadavek?</h3>
+      <p>Pro firmy nabízíme individuální SLA smlouvy a garantované linky.</p>
+      <a href="index.html#kontakt" class="btn btn--primary">Napište nám</a>
+    </div>
   </main>
 
- <footer class="site-footer">
+  <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
+      <div class="footer-left">
         <strong>NetWave s.r.o.</strong><br>
-        <span style="font-size:0.9rem; color:#666">Adresa: nám. Prikladu 1, 500 00 Město</span><br>
-        <a href="mailto:info@netwave.example" style="font-size:0.9rem; color:#666; text-decoration: underline;">
-        info@netwave.example
-      </a>
+        <address class="footer__address">
+          nám. Příkladů 1, 500 00 Město
+        </address>
+        <a href="mailto:info@netwave.example" class="footer-link">info@netwave.example</a>
       </div>
-      <div>
-      <span style="font-size:0.9rem; color:#666">© NetWave — studentský projekt</span><br>
-       <span style="font-size:0.9rem; color:#666">Posledni aktualizace: 4. 12. 2025</span>
-       </div>
+      <div class="footer-right">
+        <span class="footer__copyright">© NetWave — studentský projekt</span><br>
+        <span class="footer__update">Poslední aktualizace: 4. 12. 2025</span>
+      </div>
     </div>
-    <div class="disclaimer-box">
-  ⚠️ TOTO JE STUDENTSKÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
-</div>
+   <div class="disclaimer-bar">
+      ⚠️ TOTO JE STUDENTSKÝ ZÁPOČTOVÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
+    </div>
   </footer>
-
 </body>
 </html>

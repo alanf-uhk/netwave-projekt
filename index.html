@@ -1,146 +1,159 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NetWave — lokální poskytovatel internetu</title>
-  <meta name="description" content="NetWave — fiktivní lokální poskytovatel internetu.">
-  
+  <meta name="description" content="NetWave — fiktivní lokální poskytovatel internetu. Studentský projekt.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header class="site-header">
-    <div class="container">
+    <div class="container site-header__inner">
       <div class="brand">
         <div class="brand__logo">NW</div>
-        <div>
-          <div class="brand__title">NetWave</div>
-          <div style="font-size:0.85rem;color:var(--color-neutral-400)">lokální internet</div>
+        <div class="brand__text">
+          <span class="brand__title">NetWave</span>
+          <span class="brand__subtitle">lokální internet</span>
         </div>
       </div>
 
-      <nav class="primary-nav">
-        <ul>
-          <li><a href="sluzby.html">Služby</a></li>
-          <li><a href="#tarify">Tarify</a></li>
-          <li><a href="#pokryti">Pokrytí</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
+      <nav class="nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav__checkbox sr-only">
+        <label for="nav-toggle-checkbox" class="nav__toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li><a href="sluzby.html" class="nav__link">Služby</a></li>
+            <li><a href="#tarify" class="nav__link">Tarify</a></li>
+            <li><a href="#pokryti" class="nav__link">Pokrytí</a></li>
+            <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+          </ul>
+        </div>
       </nav>
-
-      <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobile-menu').setAttribute('aria-hidden', document.getElementById('mobile-menu').getAttribute('aria-hidden')==='true'?'false':'true')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="mobile-nav" aria-hidden="true">
-      <a href="sluzby.html">Služby</a>
-      <a href="#tarify">Tarify</a>
-      <a href="#pokryti">Pokrytí</a>
-      <a href="#kontakt">Kontakt</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero__inner">
-        <div>
-          <p style="color:var(--color-primary-700); font-weight:600;">Rychlý a spolehlivý internet</p>
-          <h1 style="font-size:var(--fs-hero); margin-bottom:var(--space-3)">NetWave — internet pro všechny</h1>
-          <p>Stabilní připojení, férové ceny a lokální podpora. Vyberte si svůj ideální tarif ještě dnes.</p>
-          <div style="display:flex; gap:12px;">
-            <a class="btn btn--primary" href="#tarify">Vybrat tarif</a>
-            <a class="btn btn--ghost" href="#kontakt">Napsat nám</a>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__subtitle">Rychlý a spolehlivý internet</span>
+          <h1>NetWave — internet pro všechny</h1>
+          <p>Stabilní připojení, férové ceny a lokální podpora. Vyberte si svůj ideální tarif ještě dnes bez závazků.</p>
+          <div class="hero__actions">
+            <a href="#tarify" class="btn btn--primary">Vybrat tarif</a>
+            <a href="#kontakt" class="btn btn--ghost">Napsat nám</a>
           </div>
         </div>
 
-        <aside class="contact-box" id="kontakt">
-          <h3 style="margin-bottom:12px">Rychlý kontakt</h3>
+        <aside class="contact-form" id="kontakt">
+          <h3>Rychlý kontakt</h3>
           <form id="contactForm">
-            <input name="name" type="text" placeholder="Jméno" aria-label="Jméno" required>
-            <input name="email" type="email" placeholder="Email" aria-label="Email" required>
-            <textarea name="message" rows="8" placeholder="Zpráva..." aria-label="Zpráva" required></textarea>
-            <button type="submit" class="btn btn--primary" style="width:100%">Odeslat</button>
-            <div id="formStatus" style="margin-top:8px; font-size:0.9rem;"></div>
+            <div class="form-group">
+              <label for="name" class="sr-only">Jméno</label>
+              <input id="name" name="name" type="text" placeholder="Jméno" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input id="email" name="email" type="email" placeholder="Email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Zpráva</label>
+              <textarea id="message" name="message" placeholder="Vaše zpráva..." class="form-textarea" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Odeslat zprávu</button>
+            <div id="formStatus" class="form-status"></div>
           </form>
         </aside>
       </div>
     </section>
 
-    <section class="container u-pt-4" id="tarify">
-      <h2>Naše tarify</h2>
-      <p>Klikněte na "Více informací" pro detailní specifikaci tarifu.</p>
+    <section class="container u-pt-8" id="tarify">
+      <div class="u-text-center">
+        <h2>Naše tarify</h2>
+        <p>Klikněte na "Více informací" pro detailní specifikaci.</p>
+      </div>
 
-      <div class="tariffs">
-        <article class="tariff-card">
-          <div class="tariff-card__title">Start</div>
-          <div class="tariff-card__price">199 Kč / měsíc</div>
-          <p>Rychlost do 50 Mbps.</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <a href="tarif-start.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Start</h3>
+          <div class="card__price">199 Kč <span>/ měsíc</span></div>
+          <p>Rychlost do 50 Mbps. Ideální pro nenáročné uživatele.</p>
+          <div class="card__actions">
+            <a href="tarif-start.html" class="btn btn--ghost">Více informací</a>
             <button class="btn btn--primary">Objednat</button>
           </div>
         </article>
 
-        <article class="tariff-card tariff-card--featured">
-          <div class="tariff-card__title">Standard</div>
-          <div class="tariff-card__price">349 Kč / měsíc</div>
-          <p>Rychlost do 200 Mbps.</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <a href="tarif-standard.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+        <article class="card card--featured">
+          <h3>Standard</h3>
+          <div class="card__price">349 Kč <span>/ měsíc</span></div>
+          <p>Rychlost do 200 Mbps. Skvělá volba pro rodiny.</p>
+          <div class="card__actions">
+            <a href="tarif-standard.html" class="btn btn--ghost">Více informací</a>
             <button class="btn btn--primary">Objednat</button>
           </div>
         </article>
 
-        <article class="tariff-card">
-          <div class="tariff-card__title">Profi</div>
-          <div class="tariff-card__price">649 Kč / měsíc</div>
-          <p>Rychlost do 1000 Mbps.</p>
-          <div style="margin-top:auto; display:flex; gap:8px;">
-            <a href="tarif-profi.html" class="btn btn--ghost" style="flex:1">Více informací</a>
+        <article class="card">
+          <h3>Profi</h3>
+          <div class="card__price">649 Kč <span>/ měsíc</span></div>
+          <p>Rychlost do 1000 Mbps. Pro náročné a firmy.</p>
+          <div class="card__actions">
+            <a href="tarif-profi.html" class="btn btn--ghost">Více informací</a>
             <button class="btn btn--primary">Objednat</button>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="container u-pt-4 u-mt-4" id="pokryti">
-      <h2>Mapa pokrytí</h2>
-      <p>Podívejte se, kde všude naše služby poskytujeme.</p>
-        <div class="map-frame">
-            <a href="img/mapa.jpg" target="_blank" title="Klikněte pro zvětšení mapy">
-              <img src="img/mapa.jpg" alt="Mapa pokrytí NetWave">
-            </a>
-        </div>
+    <section class="container u-pt-8" id="pokryti">
+      <div class="u-text-center">
+        <h2>Mapa pokrytí</h2>
+        <p>Podívejte se, kde všude naše služby poskytujeme.</p>
+      </div>
+      <div class="map-frame u-mt-4">
+        <a href="img/mapa.jpg" target="_blank" title="Klikněte pro zvětšení">
+          <img src="img/mapa.jpg" alt="Mapa pokrytí signálem NetWave v regionu">
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
+      <div class="footer-left">
         <strong>NetWave s.r.o.</strong><br>
-        <span style="font-size:0.9rem; color:#666">Adresa: nám. Prikladu 1, 500 00 Město</span><br>
-        <a href="mailto:info@netwave.example" style="font-size:0.9rem; color:#666; text-decoration: underline;">
-        info@netwave.example
-      </a>
+        <address class="footer__address">
+          nám. Příkladů 1, 500 00 Město
+        </address>
+        <a href="mailto:info@netwave.example" class="footer-link">info@netwave.example</a>
       </div>
-      <div>
-      <span style="font-size:0.9rem; color:#666">© NetWave — studentský projekt</span><br>
-       <span style="font-size:0.9rem; color:#666">Posledni aktualizace: 4. 12. 2025</span>
-       </div>
+      <div class="footer-right">
+        <span class="footer__copyright">© NetWave — studentský projekt</span><br>
+        <span class="footer__update">Poslední aktualizace: 4. 12. 2025</span>
+      </div>
     </div>
-    <div class="disclaimer-box">
-  ⚠️ TOTO JE STUDENTSKÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
-</div>
+    
+    <div class="disclaimer-bar">
+      ⚠️ TOTO JE STUDENTSKÝ ZÁPOČTOVÝ PROJEKT. Obsah je smyšlený a nepředstavuje skutečnou nabídku služeb.
+    </div>
   </footer>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('formStatus').textContent = 'Děkujeme, zpráva odeslána!';
-      document.getElementById('formStatus').style.color = 'var(--color-success)';
-      this.reset();
-    });
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const status = document.getElementById('formStatus');
+        status.textContent = 'Děkujeme, zpráva byla odeslána!';
+        status.style.color = 'var(--color-success)';
+        contactForm.reset();
+      });
+    }
   </script>
 </body>
 </html>
