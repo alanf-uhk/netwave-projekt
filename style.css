@@ -223,7 +223,7 @@ p { margin-bottom: var(--space-4); color: var(--color-neutral-700); }
 }
 .form-status { margin-top: var(--space-3); font-size: var(--fs-sm); }
 
-/* Card Grid (Tariffs & Services) */
+/* Card Grid - Base (Mobile) */
 .card-grid {
   display: grid;
   gap: var(--space-4);
@@ -231,16 +231,23 @@ p { margin-bottom: var(--space-4); color: var(--color-neutral-700); }
   grid-template-columns: 1fr;
 }
 
-/* Tablet Grid - Breakpoint 640px */
+/* Card Grid - Tablet */
 @media (min-width: 640px) {
   .card-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Desktop Grid - Breakpoint 1024px */
+/* Card Grid - Tariff (3 columns, centered) */
 @media (min-width: 1024px) {
-  .card-grid {
+  .card-grid--tariffs {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+  }
+}
+
+/* Card Grid - Services (4 columns) */
+@media (min-width: 1024px) {
+  .card-grid--services {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
